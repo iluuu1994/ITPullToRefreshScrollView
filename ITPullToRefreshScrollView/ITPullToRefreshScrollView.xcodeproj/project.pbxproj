@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		91D2D9C117F867BF00D4C480 /* DuxScrollViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2D9C017F867BF00D4C480 /* DuxScrollViewAnimation.m */; };
+		91DA1D0517F8A9390076E848 /* ITProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DA1D0217F8A9390076E848 /* ITProgressIndicator.m */; };
+		91DA1D0617F8A9390076E848 /* NSBezierPath+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DA1D0417F8A9390076E848 /* NSBezierPath+Geometry.m */; };
+		91DA1D0C17F8AEEC0076E848 /* NSBKeyframeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DA1D0917F8AEEC0076E848 /* NSBKeyframeAnimation.m */; };
+		91DA1D0D17F8AEEC0076E848 /* NSBKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 91DA1D0A17F8AEEC0076E848 /* NSBKeyframeAnimationFunctions.c */; };
+		91F1EF0D17F2D4FD00B5017E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F1EF0C17F2D4FD00B5017E /* Cocoa.framework */; };
+		91F1EF1717F2D4FD00B5017E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91F1EF1517F2D4FD00B5017E /* InfoPlist.strings */; };
+		91F1EF1917F2D4FD00B5017E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F1EF1817F2D4FD00B5017E /* main.m */; };
+		91F1EF1D17F2D4FD00B5017E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 91F1EF1B17F2D4FD00B5017E /* Credits.rtf */; };
+		91F1EF2017F2D4FD00B5017E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F1EF1F17F2D4FD00B5017E /* AppDelegate.m */; };
+		91F1EF2317F2D4FD00B5017E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91F1EF2117F2D4FD00B5017E /* MainMenu.xib */; };
+		91F1EF2517F2D4FD00B5017E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91F1EF2417F2D4FD00B5017E /* Images.xcassets */; };
+		91F1EF2C17F2D4FD00B5017E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F1EF2B17F2D4FD00B5017E /* XCTest.framework */; };
+		91F1EF2D17F2D4FD00B5017E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F1EF0C17F2D4FD00B5017E /* Cocoa.framework */; };
+		91F1EF3517F2D4FD00B5017E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91F1EF3317F2D4FD00B5017E /* InfoPlist.strings */; };
+		91F1EF3717F2D4FD00B5017E /* ITPullToRefreshScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F1EF3617F2D4FD00B5017E /* ITPullToRefreshScrollViewTests.m */; };
+		91F1EF4C17F2DAE900B5017E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F1EF4B17F2DAE900B5017E /* QuartzCore.framework */; };
+		91F1EF6117F2FD0C00B5017E /* ITPullToRefreshClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F1EF5C17F2FD0C00B5017E /* ITPullToRefreshClipView.m */; };
+		91F1EF6217F2FD0C00B5017E /* ITPullToRefreshEdgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F1EF5E17F2FD0C00B5017E /* ITPullToRefreshEdgeView.m */; };
+		91F1EF6317F2FD0C00B5017E /* ITPullToRefreshScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F1EF6017F2FD0C00B5017E /* ITPullToRefreshScrollView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		91F1EF2E17F2D4FD00B5017E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91F1EF0117F2D4FD00B5017E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91F1EF0817F2D4FD00B5017E;
+			remoteInfo = ITPullToRefreshScrollView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		91D2D9BF17F867BF00D4C480 /* DuxScrollViewAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DuxScrollViewAnimation.h; sourceTree = "<group>"; };
+		91D2D9C017F867BF00D4C480 /* DuxScrollViewAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DuxScrollViewAnimation.m; sourceTree = "<group>"; };
+		91DA1D0117F8A9390076E848 /* ITProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITProgressIndicator.h; sourceTree = "<group>"; };
+		91DA1D0217F8A9390076E848 /* ITProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITProgressIndicator.m; sourceTree = "<group>"; };
+		91DA1D0317F8A9390076E848 /* NSBezierPath+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+Geometry.h"; sourceTree = "<group>"; };
+		91DA1D0417F8A9390076E848 /* NSBezierPath+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+Geometry.m"; sourceTree = "<group>"; };
+		91DA1D0817F8AEEC0076E848 /* NSBKeyframeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBKeyframeAnimation.h; sourceTree = "<group>"; };
+		91DA1D0917F8AEEC0076E848 /* NSBKeyframeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBKeyframeAnimation.m; sourceTree = "<group>"; };
+		91DA1D0A17F8AEEC0076E848 /* NSBKeyframeAnimationFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NSBKeyframeAnimationFunctions.c; sourceTree = "<group>"; };
+		91DA1D0B17F8AEEC0076E848 /* NSBKeyframeAnimationFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBKeyframeAnimationFunctions.h; sourceTree = "<group>"; };
+		91F1EF0917F2D4FD00B5017E /* ITPullToRefreshScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITPullToRefreshScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		91F1EF0C17F2D4FD00B5017E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		91F1EF0F17F2D4FD00B5017E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		91F1EF1017F2D4FD00B5017E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		91F1EF1117F2D4FD00B5017E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		91F1EF1417F2D4FD00B5017E /* ITPullToRefreshScrollView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ITPullToRefreshScrollView-Info.plist"; sourceTree = "<group>"; };
+		91F1EF1617F2D4FD00B5017E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		91F1EF1817F2D4FD00B5017E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		91F1EF1A17F2D4FD00B5017E /* ITPullToRefreshScrollView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ITPullToRefreshScrollView-Prefix.pch"; sourceTree = "<group>"; };
+		91F1EF1C17F2D4FD00B5017E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		91F1EF1E17F2D4FD00B5017E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		91F1EF1F17F2D4FD00B5017E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		91F1EF2217F2D4FD00B5017E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		91F1EF2417F2D4FD00B5017E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		91F1EF2A17F2D4FD00B5017E /* ITPullToRefreshScrollViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ITPullToRefreshScrollViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		91F1EF2B17F2D4FD00B5017E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		91F1EF3217F2D4FD00B5017E /* ITPullToRefreshScrollViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ITPullToRefreshScrollViewTests-Info.plist"; sourceTree = "<group>"; };
+		91F1EF3417F2D4FD00B5017E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		91F1EF3617F2D4FD00B5017E /* ITPullToRefreshScrollViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITPullToRefreshScrollViewTests.m; sourceTree = "<group>"; };
+		91F1EF4B17F2DAE900B5017E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		91F1EF5B17F2FD0C00B5017E /* ITPullToRefreshClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITPullToRefreshClipView.h; path = Classes/ITPullToRefreshClipView.h; sourceTree = SOURCE_ROOT; };
+		91F1EF5C17F2FD0C00B5017E /* ITPullToRefreshClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITPullToRefreshClipView.m; path = Classes/ITPullToRefreshClipView.m; sourceTree = SOURCE_ROOT; };
+		91F1EF5D17F2FD0C00B5017E /* ITPullToRefreshEdgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITPullToRefreshEdgeView.h; path = Classes/ITPullToRefreshEdgeView.h; sourceTree = SOURCE_ROOT; };
+		91F1EF5E17F2FD0C00B5017E /* ITPullToRefreshEdgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITPullToRefreshEdgeView.m; path = Classes/ITPullToRefreshEdgeView.m; sourceTree = SOURCE_ROOT; };
+		91F1EF5F17F2FD0C00B5017E /* ITPullToRefreshScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITPullToRefreshScrollView.h; path = Classes/ITPullToRefreshScrollView.h; sourceTree = SOURCE_ROOT; };
+		91F1EF6017F2FD0C00B5017E /* ITPullToRefreshScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITPullToRefreshScrollView.m; path = Classes/ITPullToRefreshScrollView.m; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		91F1EF0617F2D4FD00B5017E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91F1EF4C17F2DAE900B5017E /* QuartzCore.framework in Frameworks */,
+				91F1EF0D17F2D4FD00B5017E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91F1EF2717F2D4FD00B5017E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91F1EF2D17F2D4FD00B5017E /* Cocoa.framework in Frameworks */,
+				91F1EF2C17F2D4FD00B5017E /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		912A2D7817F965CB00EB403A /* NSBKeyframeAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				91DA1D0817F8AEEC0076E848 /* NSBKeyframeAnimation.h */,
+				91DA1D0917F8AEEC0076E848 /* NSBKeyframeAnimation.m */,
+				91DA1D0A17F8AEEC0076E848 /* NSBKeyframeAnimationFunctions.c */,
+				91DA1D0B17F8AEEC0076E848 /* NSBKeyframeAnimationFunctions.h */,
+			);
+			name = NSBKeyframeAnimation;
+			sourceTree = "<group>";
+		};
+		91DA1D0017F895810076E848 /* Scroll Animation */ = {
+			isa = PBXGroup;
+			children = (
+				91D2D9BF17F867BF00D4C480 /* DuxScrollViewAnimation.h */,
+				91D2D9C017F867BF00D4C480 /* DuxScrollViewAnimation.m */,
+			);
+			name = "Scroll Animation";
+			sourceTree = "<group>";
+		};
+		91DA1D0717F8A93D0076E848 /* ITProgressIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				91DA1D0117F8A9390076E848 /* ITProgressIndicator.h */,
+				91DA1D0217F8A9390076E848 /* ITProgressIndicator.m */,
+				91DA1D0317F8A9390076E848 /* NSBezierPath+Geometry.h */,
+				91DA1D0417F8A9390076E848 /* NSBezierPath+Geometry.m */,
+			);
+			name = ITProgressIndicator;
+			sourceTree = "<group>";
+		};
+		91F1EF0017F2D4FD00B5017E = {
+			isa = PBXGroup;
+			children = (
+				91F1EF1217F2D4FD00B5017E /* ITPullToRefreshScrollView */,
+				91F1EF3017F2D4FD00B5017E /* ITPullToRefreshScrollViewTests */,
+				91F1EF0B17F2D4FD00B5017E /* Frameworks */,
+				91F1EF0A17F2D4FD00B5017E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		91F1EF0A17F2D4FD00B5017E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91F1EF0917F2D4FD00B5017E /* ITPullToRefreshScrollView.app */,
+				91F1EF2A17F2D4FD00B5017E /* ITPullToRefreshScrollViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91F1EF0B17F2D4FD00B5017E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91F1EF4B17F2DAE900B5017E /* QuartzCore.framework */,
+				91F1EF0C17F2D4FD00B5017E /* Cocoa.framework */,
+				91F1EF2B17F2D4FD00B5017E /* XCTest.framework */,
+				91F1EF0E17F2D4FD00B5017E /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		91F1EF0E17F2D4FD00B5017E /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91F1EF0F17F2D4FD00B5017E /* AppKit.framework */,
+				91F1EF1017F2D4FD00B5017E /* CoreData.framework */,
+				91F1EF1117F2D4FD00B5017E /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		91F1EF1217F2D4FD00B5017E /* ITPullToRefreshScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				91F1EF1E17F2D4FD00B5017E /* AppDelegate.h */,
+				91F1EF1F17F2D4FD00B5017E /* AppDelegate.m */,
+				91F1EF5317F2F32A00B5017E /* Classes */,
+				91DA1D0717F8A93D0076E848 /* ITProgressIndicator */,
+				912A2D7817F965CB00EB403A /* NSBKeyframeAnimation */,
+				91DA1D0017F895810076E848 /* Scroll Animation */,
+				91F1EF2117F2D4FD00B5017E /* MainMenu.xib */,
+				91F1EF2417F2D4FD00B5017E /* Images.xcassets */,
+				91F1EF1317F2D4FD00B5017E /* Supporting Files */,
+			);
+			path = ITPullToRefreshScrollView;
+			sourceTree = "<group>";
+		};
+		91F1EF1317F2D4FD00B5017E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				91F1EF1417F2D4FD00B5017E /* ITPullToRefreshScrollView-Info.plist */,
+				91F1EF1517F2D4FD00B5017E /* InfoPlist.strings */,
+				91F1EF1817F2D4FD00B5017E /* main.m */,
+				91F1EF1A17F2D4FD00B5017E /* ITPullToRefreshScrollView-Prefix.pch */,
+				91F1EF1B17F2D4FD00B5017E /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		91F1EF3017F2D4FD00B5017E /* ITPullToRefreshScrollViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				91F1EF3617F2D4FD00B5017E /* ITPullToRefreshScrollViewTests.m */,
+				91F1EF3117F2D4FD00B5017E /* Supporting Files */,
+			);
+			path = ITPullToRefreshScrollViewTests;
+			sourceTree = "<group>";
+		};
+		91F1EF3117F2D4FD00B5017E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				91F1EF3217F2D4FD00B5017E /* ITPullToRefreshScrollViewTests-Info.plist */,
+				91F1EF3317F2D4FD00B5017E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		91F1EF5317F2F32A00B5017E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				91F1EF5F17F2FD0C00B5017E /* ITPullToRefreshScrollView.h */,
+				91F1EF6017F2FD0C00B5017E /* ITPullToRefreshScrollView.m */,
+				91F1EF5B17F2FD0C00B5017E /* ITPullToRefreshClipView.h */,
+				91F1EF5C17F2FD0C00B5017E /* ITPullToRefreshClipView.m */,
+				91F1EF5D17F2FD0C00B5017E /* ITPullToRefreshEdgeView.h */,
+				91F1EF5E17F2FD0C00B5017E /* ITPullToRefreshEdgeView.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		91F1EF0817F2D4FD00B5017E /* ITPullToRefreshScrollView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91F1EF3A17F2D4FD00B5017E /* Build configuration list for PBXNativeTarget "ITPullToRefreshScrollView" */;
+			buildPhases = (
+				91F1EF0517F2D4FD00B5017E /* Sources */,
+				91F1EF0617F2D4FD00B5017E /* Frameworks */,
+				91F1EF0717F2D4FD00B5017E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ITPullToRefreshScrollView;
+			productName = ITPullToRefreshScrollView;
+			productReference = 91F1EF0917F2D4FD00B5017E /* ITPullToRefreshScrollView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		91F1EF2917F2D4FD00B5017E /* ITPullToRefreshScrollViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91F1EF3D17F2D4FD00B5017E /* Build configuration list for PBXNativeTarget "ITPullToRefreshScrollViewTests" */;
+			buildPhases = (
+				91F1EF2617F2D4FD00B5017E /* Sources */,
+				91F1EF2717F2D4FD00B5017E /* Frameworks */,
+				91F1EF2817F2D4FD00B5017E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				91F1EF2F17F2D4FD00B5017E /* PBXTargetDependency */,
+			);
+			name = ITPullToRefreshScrollViewTests;
+			productName = ITPullToRefreshScrollViewTests;
+			productReference = 91F1EF2A17F2D4FD00B5017E /* ITPullToRefreshScrollViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		91F1EF0117F2D4FD00B5017E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Ilija Tovilo";
+				TargetAttributes = {
+					91F1EF2917F2D4FD00B5017E = {
+						TestTargetID = 91F1EF0817F2D4FD00B5017E;
+					};
+				};
+			};
+			buildConfigurationList = 91F1EF0417F2D4FD00B5017E /* Build configuration list for PBXProject "ITPullToRefreshScrollView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 91F1EF0017F2D4FD00B5017E;
+			productRefGroup = 91F1EF0A17F2D4FD00B5017E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				91F1EF0817F2D4FD00B5017E /* ITPullToRefreshScrollView */,
+				91F1EF2917F2D4FD00B5017E /* ITPullToRefreshScrollViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		91F1EF0717F2D4FD00B5017E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91F1EF1717F2D4FD00B5017E /* InfoPlist.strings in Resources */,
+				91F1EF2517F2D4FD00B5017E /* Images.xcassets in Resources */,
+				91F1EF1D17F2D4FD00B5017E /* Credits.rtf in Resources */,
+				91F1EF2317F2D4FD00B5017E /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91F1EF2817F2D4FD00B5017E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91F1EF3517F2D4FD00B5017E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		91F1EF0517F2D4FD00B5017E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91D2D9C117F867BF00D4C480 /* DuxScrollViewAnimation.m in Sources */,
+				91DA1D0D17F8AEEC0076E848 /* NSBKeyframeAnimationFunctions.c in Sources */,
+				91F1EF6217F2FD0C00B5017E /* ITPullToRefreshEdgeView.m in Sources */,
+				91F1EF2017F2D4FD00B5017E /* AppDelegate.m in Sources */,
+				91DA1D0517F8A9390076E848 /* ITProgressIndicator.m in Sources */,
+				91F1EF1917F2D4FD00B5017E /* main.m in Sources */,
+				91DA1D0C17F8AEEC0076E848 /* NSBKeyframeAnimation.m in Sources */,
+				91DA1D0617F8A9390076E848 /* NSBezierPath+Geometry.m in Sources */,
+				91F1EF6317F2FD0C00B5017E /* ITPullToRefreshScrollView.m in Sources */,
+				91F1EF6117F2FD0C00B5017E /* ITPullToRefreshClipView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91F1EF2617F2D4FD00B5017E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91F1EF3717F2D4FD00B5017E /* ITPullToRefreshScrollViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		91F1EF2F17F2D4FD00B5017E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91F1EF0817F2D4FD00B5017E /* ITPullToRefreshScrollView */;
+			targetProxy = 91F1EF2E17F2D4FD00B5017E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		91F1EF1517F2D4FD00B5017E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91F1EF1617F2D4FD00B5017E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		91F1EF1B17F2D4FD00B5017E /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91F1EF1C17F2D4FD00B5017E /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		91F1EF2117F2D4FD00B5017E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91F1EF2217F2D4FD00B5017E /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		91F1EF3317F2D4FD00B5017E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				91F1EF3417F2D4FD00B5017E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		91F1EF3817F2D4FD00B5017E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		91F1EF3917F2D4FD00B5017E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		91F1EF3B17F2D4FD00B5017E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ITPullToRefreshScrollView/ITPullToRefreshScrollView-Prefix.pch";
+				INFOPLIST_FILE = "ITPullToRefreshScrollView/ITPullToRefreshScrollView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		91F1EF3C17F2D4FD00B5017E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ITPullToRefreshScrollView/ITPullToRefreshScrollView-Prefix.pch";
+				INFOPLIST_FILE = "ITPullToRefreshScrollView/ITPullToRefreshScrollView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		91F1EF3E17F2D4FD00B5017E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ITPullToRefreshScrollView.app/Contents/MacOS/ITPullToRefreshScrollView";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ITPullToRefreshScrollView/ITPullToRefreshScrollView-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ITPullToRefreshScrollViewTests/ITPullToRefreshScrollViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		91F1EF3F17F2D4FD00B5017E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ITPullToRefreshScrollView.app/Contents/MacOS/ITPullToRefreshScrollView";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ITPullToRefreshScrollView/ITPullToRefreshScrollView-Prefix.pch";
+				INFOPLIST_FILE = "ITPullToRefreshScrollViewTests/ITPullToRefreshScrollViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		91F1EF0417F2D4FD00B5017E /* Build configuration list for PBXProject "ITPullToRefreshScrollView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91F1EF3817F2D4FD00B5017E /* Debug */,
+				91F1EF3917F2D4FD00B5017E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91F1EF3A17F2D4FD00B5017E /* Build configuration list for PBXNativeTarget "ITPullToRefreshScrollView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91F1EF3B17F2D4FD00B5017E /* Debug */,
+				91F1EF3C17F2D4FD00B5017E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91F1EF3D17F2D4FD00B5017E /* Build configuration list for PBXNativeTarget "ITPullToRefreshScrollViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91F1EF3E17F2D4FD00B5017E /* Debug */,
+				91F1EF3F17F2D4FD00B5017E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 91F1EF0117F2D4FD00B5017E /* Project object */;
+}
