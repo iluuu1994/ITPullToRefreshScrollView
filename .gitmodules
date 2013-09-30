@@ -1,0 +1,6 @@
+[submodule "Modules/NSBKeyframeAnimation"]
+	path = Modules/NSBKeyframeAnimation
+	url = https://github.com/iluuu1994/NSBKeyframeAnimation
+[submodule "Modules/ITProgressIndicator"]
+	path = Modules/ITProgressIndicator
+	url = https://github.com/iluuu1994/ITProgressIndicator
