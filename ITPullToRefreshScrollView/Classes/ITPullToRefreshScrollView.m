@@ -13,6 +13,15 @@
 #import "DuxScrollViewAnimation.h"
 
 
+void dispatch_sync_on_main(dispatch_block_t block) {
+    if ([NSThread isMainThread]) {
+        block();
+    } else {
+        dispatch_sync(dispatch_get_main_queue(), block);
+    }
+}
+
+
 @interface ITPullToRefreshScrollView () {
     BOOL _isLocked;
     NSUInteger _edgesToBeRemoved;
@@ -136,51 +145,55 @@
 }
 
 - (void)stopRefreshingEdge:(ITPullToRefreshEdge)edge {
-    [[self edgeViewForEdge:edge] pullToRefreshScrollViewDidStopRefreshing:self];
-    
-    if (_refreshingEdges & edge) {
-        _isLocked = YES;
+    dispatch_sync_on_main(^{
+        [[self edgeViewForEdge:edge] pullToRefreshScrollViewDidStopRefreshing:self];
         
-        NSPoint scrollPoint = self.contentView.bounds.origin;
-        NSRect cvb = self.contentView.bounds;
-        NSRect evf = [self edgeViewForEdge:edge].frame;
-        
-        if (edge == ITPullToRefreshEdgeTop) {
-            if (cvb.origin.y < 0) {
-                scrollPoint.y += -cvb.origin.y;
-            } else {
-                scrollPoint.y += [self edgeViewForEdge:edge].frame.size.height;
+        if (_refreshingEdges & edge) {
+            _isLocked = YES;
+            
+            NSPoint scrollPoint = self.contentView.bounds.origin;
+            NSRect cvb = self.contentView.bounds;
+            NSRect evf = [self edgeViewForEdge:edge].frame;
+            
+            if (edge == ITPullToRefreshEdgeTop) {
+                if (cvb.origin.y < 0) {
+                    scrollPoint.y += -cvb.origin.y;
+                } else {
+                    scrollPoint.y += [self edgeViewForEdge:edge].frame.size.height;
+                }
+            } else if (edge == ITPullToRefreshEdgeBottom) {
+                if (cvb.origin.y + cvb.size.height > evf.origin.y) {
+                    scrollPoint.y -= -(evf.origin.y - (cvb.origin.y + cvb.size.height));
+                } else {
+                    scrollPoint.y -= evf.size.height;
+                }
             }
-        } else if (edge == ITPullToRefreshEdgeBottom) {
-            if (cvb.origin.y + cvb.size.height > evf.origin.y) {
-                scrollPoint.y -= -(evf.origin.y - (cvb.origin.y + cvb.size.height));
-            } else {
-                scrollPoint.y -= evf.size.height;
-            }
+            
+            _edgesToBeRemoved |= edge;
+            [DuxScrollViewAnimation animatedScrollToPoint:scrollPoint
+                                             inScrollView:self
+                                                 delegate:self];
         }
-        
-        _edgesToBeRemoved |= edge;
-        [DuxScrollViewAnimation animatedScrollToPoint:scrollPoint
-                                         inScrollView:self
-                                             delegate:self];
-    }
+    });
 }
 
 - (void)animationDidEnd:(NSAnimation *)animation {
-    [self enumerateThroughEdges:^(ITPullToRefreshEdge edge) {
-        if (_edgesToBeRemoved & edge) {
-            _edgesToBeRemoved &= ~edge;
-            _refreshingEdges &= ~edge;
-            
-            [self imitateScrollingEventForEdge:edge];
-            
-            if ([self.delegate respondsToSelector:@selector(pullToRefreshView:didStopRefreshingEdge:)]) {
-                [self.delegate pullToRefreshView:self didStopRefreshingEdge:edge];
+    dispatch_sync_on_main(^{
+        [self enumerateThroughEdges:^(ITPullToRefreshEdge edge) {
+            if (_edgesToBeRemoved & edge) {
+                _edgesToBeRemoved &= ~edge;
+                _refreshingEdges &= ~edge;
+                
+                [self imitateScrollingEventForEdge:edge];
+                
+                if ([self.delegate respondsToSelector:@selector(pullToRefreshView:didStopRefreshingEdge:)]) {
+                    [self.delegate pullToRefreshView:self didStopRefreshingEdge:edge];
+                }
             }
-        }
-    }];
-    
-    if (!_edgesToBeRemoved) _isLocked = NO;
+        }];
+        
+        if (!_edgesToBeRemoved) _isLocked = NO;
+    });
 }
 
 - (void)imitateScrollingEventForEdge:(ITPullToRefreshEdge)edge {
