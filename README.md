@@ -31,6 +31,8 @@ You need to copy the following files:
 * `ITPullToRefreshClipView.m`
 * `ITPullToRefreshEdgeView.h`
 * `ITPullToRefreshEdgeView.m`
+* `DuxScrollViewAnimation.h`
+* `DuxScrollViewAnimation.m`
 
 -----------
 
