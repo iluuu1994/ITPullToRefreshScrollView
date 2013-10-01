@@ -11,7 +11,7 @@
 		91915E3A17F98453002031B0 /* NSBKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 91915E3717F98453002031B0 /* NSBKeyframeAnimationFunctions.c */; };
 		91915E3F17F984A1002031B0 /* ITProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 91915E3C17F984A1002031B0 /* ITProgressIndicator.m */; };
 		91915E4017F984A1002031B0 /* NSBezierPath+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 91915E3E17F984A1002031B0 /* NSBezierPath+Geometry.m */; };
-		91D2D9C117F867BF00D4C480 /* DuxScrollViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D2D9C017F867BF00D4C480 /* DuxScrollViewAnimation.m */; };
+		91EE6BFC17FAC2F9004A307A /* DuxScrollViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EE6BFB17FAC2F9004A307A /* DuxScrollViewAnimation.m */; };
 		91F1EF0D17F2D4FD00B5017E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F1EF0C17F2D4FD00B5017E /* Cocoa.framework */; };
 		91F1EF1717F2D4FD00B5017E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91F1EF1517F2D4FD00B5017E /* InfoPlist.strings */; };
 		91F1EF1917F2D4FD00B5017E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F1EF1817F2D4FD00B5017E /* main.m */; };
@@ -48,8 +48,8 @@
 		91915E3C17F984A1002031B0 /* ITProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITProgressIndicator.m; path = ../../Modules/ITProgressIndicator/ITProgressIndicator/Classes/ITProgressIndicator.m; sourceTree = "<group>"; };
 		91915E3D17F984A1002031B0 /* NSBezierPath+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSBezierPath+Geometry.h"; path = "../../Modules/ITProgressIndicator/ITProgressIndicator/Classes/NSBezierPath+Geometry.h"; sourceTree = "<group>"; };
 		91915E3E17F984A1002031B0 /* NSBezierPath+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSBezierPath+Geometry.m"; path = "../../Modules/ITProgressIndicator/ITProgressIndicator/Classes/NSBezierPath+Geometry.m"; sourceTree = "<group>"; };
-		91D2D9BF17F867BF00D4C480 /* DuxScrollViewAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DuxScrollViewAnimation.h; sourceTree = "<group>"; };
-		91D2D9C017F867BF00D4C480 /* DuxScrollViewAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DuxScrollViewAnimation.m; sourceTree = "<group>"; };
+		91EE6BFA17FAC2F9004A307A /* DuxScrollViewAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DuxScrollViewAnimation.h; path = Classes/DuxScrollViewAnimation.h; sourceTree = SOURCE_ROOT; };
+		91EE6BFB17FAC2F9004A307A /* DuxScrollViewAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DuxScrollViewAnimation.m; path = Classes/DuxScrollViewAnimation.m; sourceTree = SOURCE_ROOT; };
 		91F1EF0917F2D4FD00B5017E /* ITPullToRefreshScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITPullToRefreshScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F1EF0C17F2D4FD00B5017E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		91F1EF0F17F2D4FD00B5017E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -114,8 +114,8 @@
 		91DA1D0017F895810076E848 /* Scroll Animation */ = {
 			isa = PBXGroup;
 			children = (
-				91D2D9BF17F867BF00D4C480 /* DuxScrollViewAnimation.h */,
-				91D2D9C017F867BF00D4C480 /* DuxScrollViewAnimation.m */,
+				91EE6BFA17FAC2F9004A307A /* DuxScrollViewAnimation.h */,
+				91EE6BFB17FAC2F9004A307A /* DuxScrollViewAnimation.m */,
 			);
 			name = "Scroll Animation";
 			sourceTree = "<group>";
@@ -328,7 +328,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91D2D9C117F867BF00D4C480 /* DuxScrollViewAnimation.m in Sources */,
 				91915E3917F98453002031B0 /* NSBKeyframeAnimation.m in Sources */,
 				91915E3A17F98453002031B0 /* NSBKeyframeAnimationFunctions.c in Sources */,
 				91F1EF6217F2FD0C00B5017E /* ITPullToRefreshEdgeView.m in Sources */,
@@ -337,6 +336,7 @@
 				91F1EF1917F2D4FD00B5017E /* main.m in Sources */,
 				91915E3F17F984A1002031B0 /* ITProgressIndicator.m in Sources */,
 				91F1EF6317F2FD0C00B5017E /* ITPullToRefreshScrollView.m in Sources */,
+				91EE6BFC17FAC2F9004A307A /* DuxScrollViewAnimation.m in Sources */,
 				91F1EF6117F2FD0C00B5017E /* ITPullToRefreshClipView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
