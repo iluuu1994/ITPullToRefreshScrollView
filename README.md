@@ -1,7 +1,7 @@
 ITPullToRefreshScrollView
 =========================
 
-`ITPullToRefreshScrollView` is a subclass of `NSScrollView` which allows refreshing by scrolling
+`ITPullToRefreshScrollView` is a subclass of `NSScrollView` which allows iOS 7 style refreshing by pulling.
 `ITPullToRefreshScrollView` was created for [Play by Play](http://playbyplayapp.com), development funded by [David Keegan](http://davidkeegan.com).
 
 ![](./demo.gif)
