@@ -38,7 +38,7 @@
     [self.progressIndicator setWantsLayer:YES];
     self.progressIndicator.animates = NO;
     self.progressIndicator.hideWhenStopped = NO;
-    self.progressIndicator.isIndeterminate = YES;
+    self.progressIndicator.isIndeterminate = NO;
     self.progressIndicator.progress = 0.0;
     self.progressIndicator.numberOfLines = 12;
     self.progressIndicator.widthOfLine = 2.0;
@@ -159,13 +159,13 @@
 
 - (void)pullToRefreshScrollView:(ITPullToRefreshScrollView *)scrollView didScrollWithProgress:(CGFloat)progress {
     if (progress < 1.0) {
-        self.progressIndicator.isIndeterminate = YES;
+        self.progressIndicator.isIndeterminate = NO;
         self.progressIndicator.progress = progress;
     }
 }
 
 - (void)pullToRefreshScrollViewDidTriggerRefresh:(ITPullToRefreshScrollView *)scrollView {
-    self.progressIndicator.isIndeterminate = YES;
+    self.progressIndicator.isIndeterminate = NO;
     self.progressIndicator.progress = 1.0;
 }
 
@@ -175,13 +175,13 @@
 
 - (void)pullToRefreshScrollViewDidStartRefreshing:(ITPullToRefreshScrollView *)scrollView {
     [self.progressIndicator.layer addAnimation:[self rotationAnimation] forKey:@"rotation"];
-    self.progressIndicator.isIndeterminate = NO;
+    self.progressIndicator.isIndeterminate = YES;
     self.progressIndicator.animates = YES;
 }
 
 - (void)pullToRefreshScrollViewDidStopRefreshing:(ITPullToRefreshScrollView *)scrollView {
     self.progressIndicator.animates = NO;
-    self.progressIndicator.isIndeterminate = YES;
+    self.progressIndicator.isIndeterminate = NO;
 
     [self.progressIndicator.layer removeAnimationForKey:@"rotation"];
     [self.progressIndicator.layer addAnimation:[self shrinkAnimation] forKey:@"shrink"];
