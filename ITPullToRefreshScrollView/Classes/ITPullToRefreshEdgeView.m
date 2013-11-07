@@ -14,7 +14,13 @@
 #define kDefaultEdgeViewHeight 30
 #define kSpinnerSize 30
 
-@interface ITPullToRefreshEdgeView ()
+#define kMinSpinAnimationDuration 2.0
+#define kMaxSpinAnimationDuration 8.0
+#define kSpringRange 0.4
+
+@interface ITPullToRefreshEdgeView () {
+    CGFloat _cachedProgress;
+}
 @property (strong) ITProgressIndicator *progressIndicator;
 @end
 
@@ -158,6 +164,8 @@
 }
 
 - (void)pullToRefreshScrollView:(ITPullToRefreshScrollView *)scrollView didScrollWithProgress:(CGFloat)progress {
+    _cachedProgress = progress;
+    
     if (progress < 1.0) {
         self.progressIndicator.isIndeterminate = NO;
         self.progressIndicator.progress = progress;
@@ -174,7 +182,10 @@
 }
 
 - (void)pullToRefreshScrollViewDidStartRefreshing:(ITPullToRefreshScrollView *)scrollView {
-    [self.progressIndicator.layer addAnimation:[self rotationAnimation] forKey:@"rotation"];
+    CGFloat tension = (_cachedProgress - 1.0 <= kSpringRange)?_cachedProgress - 1:kSpringRange;
+    CGFloat duration = kMaxSpinAnimationDuration - ((kMaxSpinAnimationDuration - kMinSpinAnimationDuration) * (1.0 / kSpringRange * tension));
+    
+    [self.progressIndicator.layer addAnimation:[self rotationAnimationWithDuration:duration] forKey:@"rotation"];
     self.progressIndicator.isIndeterminate = YES;
     self.progressIndicator.animates = YES;
 }
@@ -197,9 +208,9 @@
     return animation;
 }
 
-- (CAAnimation *)rotationAnimation {
+- (CAAnimation *)rotationAnimationWithDuration:(CGFloat)duration {
     NSBKeyframeAnimation *animation = [NSBKeyframeAnimation animationWithKeyPath:@"transform"
-                                                                        duration:2.0
+                                                                        duration:duration
                                                                       startValue:0
                                                                         endValue:-2 * M_PI
                                                                         function:NSBKeyframeAnimationFunctionEaseOutCubic];
