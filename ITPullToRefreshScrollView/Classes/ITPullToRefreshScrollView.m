@@ -55,6 +55,13 @@ void dispatch_sync_on_main(dispatch_block_t block) {
 - (void)initialSetup {
     _edgeViews = [NSMutableDictionary dictionary];
     [self installCustomClipView];
+    
+    self.contentView.postsBoundsChangedNotifications = YES;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(boundsDidChange:) name:NSViewBoundsDidChangeNotification object:self.contentView];
+}
+
+- (IBAction)boundsDidChange:(NSNotification *)notification {
+    [self scrollingChangedWithEvent:nil];
 }
 
 - (void)installCustomClipView {
@@ -76,69 +83,81 @@ void dispatch_sync_on_main(dispatch_block_t block) {
 
 #pragma mark - NSResponder
 
+- (void)scrollingChangedWithEvent:(NSEvent *)theEvent {
+    if (_isLocked) return;
+    
+    void (^scrollBlock)(ITPullToRefreshEdge edge, CGFloat (^progressBlock)(void)) =
+    ^(ITPullToRefreshEdge edge, CGFloat (^progressBlock)()) {
+        if (!(_refreshingEdges & edge)) {
+            ITPullToRefreshEdgeView *edgeView = [self edgeViewForEdge:edge];
+            CGFloat progress = progressBlock();
+            
+            if ((edge & self.refreshableEdges) && progress > 0) {
+                [edgeView pullToRefreshScrollView:self didScrollWithProgress:progress];
+                
+                if (progress >= 1.0) {
+                    if (!(self.triggeredEdges & edge)) {
+                        [edgeView pullToRefreshScrollViewDidTriggerRefresh:self];
+                    }
+                    
+                    _triggeredEdges |= edge;
+                } else {
+                    if (self.triggeredEdges & edge) {
+                        [edgeView pullToRefreshScrollViewDidUntriggerRefresh:self];
+                    }
+                    
+                    _triggeredEdges &= ~edge;
+                }
+            }
+        }
+    };
+    
+    // Update edges
+    if ((ITPullToRefreshEdgeTop & self.refreshableEdges)) {
+        scrollBlock(ITPullToRefreshEdgeTop, ^{
+            ITPullToRefreshEdgeView *edgeView = [self edgeViewForEdge:ITPullToRefreshEdgeTop];
+            return (1.0 /
+                    edgeView.frame.size.height *
+                    -self.contentView.bounds.origin.y);
+        });
+    }
+    if ((ITPullToRefreshEdgeBottom & self.refreshableEdges)) {
+        scrollBlock(ITPullToRefreshEdgeBottom, ^{
+            ITPullToRefreshEdgeView *edgeView = [self edgeViewForEdge:ITPullToRefreshEdgeBottom];
+            
+            return (1.0 /
+                    edgeView.bounds.size.height *
+                    -(edgeView.frame.origin.y - (self.contentView.bounds.origin.y + self.contentView.bounds.size.height)));
+        });
+    }
+}
+
+- (void)scrollingEndedWithEvent:(NSEvent *)theEvent {
+    if (_isLocked) return;
+    
+    [self enumerateThroughEdges:^(ITPullToRefreshEdge edge) {
+        if (_triggeredEdges & edge) {
+            _triggeredEdges &= ~edge;
+            _refreshingEdges |= edge;
+            
+            [[self edgeViewForEdge:edge] pullToRefreshScrollViewDidStartRefreshing:self];
+            
+            if ([self.delegate respondsToSelector:@selector(pullToRefreshView:didStartRefreshingEdge:)]) {
+                [self.delegate pullToRefreshView:self didStartRefreshingEdge:edge];
+            }
+        }
+    }];
+}
+
 - (void)scrollWheel:(NSEvent *)theEvent {
     if (_isLocked) return;
     
     const NSEventPhase eventPhase = theEvent.phase;
     
     if (eventPhase & NSEventPhaseChanged) {
-        void (^scrollBlock)(ITPullToRefreshEdge edge, CGFloat (^progressBlock)(void)) =
-        ^(ITPullToRefreshEdge edge, CGFloat (^progressBlock)()) {
-            if (!(_refreshingEdges & edge)) {
-                ITPullToRefreshEdgeView *edgeView = [self edgeViewForEdge:edge];
-                CGFloat progress = progressBlock();
-                
-                if ((edge & self.refreshableEdges) && progress > 0) {
-                    [edgeView pullToRefreshScrollView:self didScrollWithProgress:progress];
-                    
-                    if (progress >= 1.0) {
-                        if (!(self.triggeredEdges & edge)) {
-                            [edgeView pullToRefreshScrollViewDidTriggerRefresh:self];
-                        }
-                        
-                        _triggeredEdges |= edge;
-                    } else {
-                        if (self.triggeredEdges & edge) {
-                            [edgeView pullToRefreshScrollViewDidUntriggerRefresh:self];
-                        }
-                        
-                        _triggeredEdges &= ~edge;
-                    }
-                }
-            }
-        };
-        
-        // Update edges
-        if ((ITPullToRefreshEdgeTop & self.refreshableEdges)) {
-            scrollBlock(ITPullToRefreshEdgeTop, ^{
-                ITPullToRefreshEdgeView *edgeView = [self edgeViewForEdge:ITPullToRefreshEdgeTop];
-                return (1.0 /
-                        edgeView.frame.size.height *
-                        -self.contentView.bounds.origin.y);
-            });
-        }
-        if ((ITPullToRefreshEdgeBottom & self.refreshableEdges)) {
-            scrollBlock(ITPullToRefreshEdgeBottom, ^{
-                ITPullToRefreshEdgeView *edgeView = [self edgeViewForEdge:ITPullToRefreshEdgeBottom];
-                
-                return (1.0 /
-                        edgeView.bounds.size.height *
-                        -(edgeView.frame.origin.y - (self.contentView.bounds.origin.y + self.contentView.bounds.size.height)));
-            });
-        }
+        [self scrollingChangedWithEvent:theEvent];
     } else if(eventPhase & NSEventPhaseEnded) {
-        [self enumerateThroughEdges:^(ITPullToRefreshEdge edge) {
-            if (_triggeredEdges & edge) {
-                _triggeredEdges &= ~edge;
-                _refreshingEdges |= edge;
-                
-                [[self edgeViewForEdge:edge] pullToRefreshScrollViewDidStartRefreshing:self];
-                
-                if ([self.delegate respondsToSelector:@selector(pullToRefreshView:didStartRefreshingEdge:)]) {
-                    [self.delegate pullToRefreshView:self didStartRefreshingEdge:edge];
-                }
-            }
-        }];
+        [self scrollingEndedWithEvent:theEvent];
     }
         
     [super scrollWheel:theEvent];
