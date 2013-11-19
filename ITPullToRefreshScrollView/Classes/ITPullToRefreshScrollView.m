@@ -12,7 +12,7 @@
 #import "ITPullToRefreshClipView.h"
 #import "DuxScrollViewAnimation.h"
 
-
+void dispatch_sync_on_main(dispatch_block_t block);
 void dispatch_sync_on_main(dispatch_block_t block) {
     if ([NSThread isMainThread]) {
         block();
