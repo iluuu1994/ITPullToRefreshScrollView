@@ -205,6 +205,8 @@ void dispatch_sync_on_main(dispatch_block_t block) {
                 
                 [self imitateScrollingEventForEdge:edge];
                 
+                [[self edgeViewForEdge:edge] pullToRefreshScrollViewDidStopAnimating:self];
+                
                 if ([self.delegate respondsToSelector:@selector(pullToRefreshView:didStopRefreshingEdge:)]) {
                     [self.delegate pullToRefreshView:self didStopRefreshingEdge:edge];
                 }

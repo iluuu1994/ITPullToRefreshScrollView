@@ -194,8 +194,11 @@
     self.progressIndicator.animates = NO;
     self.progressIndicator.isIndeterminate = NO;
 
-    [self.progressIndicator.layer removeAnimationForKey:@"rotation"];
     [self.progressIndicator.layer addAnimation:[self shrinkAnimation] forKey:@"shrink"];
+}
+
+- (void)pullToRefreshScrollViewDidStopAnimating:(ITPullToRefreshScrollView *)scrollView {
+    [self.progressIndicator.layer removeAnimationForKey:@"rotation"];
 }
 
 - (CAAnimation *)shrinkAnimation {

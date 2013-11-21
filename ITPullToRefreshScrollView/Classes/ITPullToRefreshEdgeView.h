@@ -59,6 +59,13 @@
 - (void)pullToRefreshScrollViewDidStopRefreshing:(ITPullToRefreshScrollView *)scrollView;
 
 /**
+ *  This is the final method called when the scroll view stopped animating
+ *
+ *  @param scrollView - The sender scroll view
+ */
+- (void)pullToRefreshScrollViewDidStopAnimating:(ITPullToRefreshScrollView *)scrollView;
+
+/**
  *  This method is called when part of the edge view becomes visible
  *
  *  @param scrollView - The sender scroll view
