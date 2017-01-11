@@ -10,7 +10,6 @@
 		91915E3917F98453002031B0 /* NSBKeyframeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91915E3617F98453002031B0 /* NSBKeyframeAnimation.m */; };
 		91915E3A17F98453002031B0 /* NSBKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 91915E3717F98453002031B0 /* NSBKeyframeAnimationFunctions.c */; };
 		91915E3F17F984A1002031B0 /* ITProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 91915E3C17F984A1002031B0 /* ITProgressIndicator.m */; };
-		91915E4017F984A1002031B0 /* NSBezierPath+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 91915E3E17F984A1002031B0 /* NSBezierPath+Geometry.m */; };
 		91EE6BFC17FAC2F9004A307A /* DuxScrollViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EE6BFB17FAC2F9004A307A /* DuxScrollViewAnimation.m */; };
 		91F1EF0D17F2D4FD00B5017E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F1EF0C17F2D4FD00B5017E /* Cocoa.framework */; };
 		91F1EF1717F2D4FD00B5017E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91F1EF1517F2D4FD00B5017E /* InfoPlist.strings */; };
@@ -46,8 +45,6 @@
 		91915E3817F98453002031B0 /* NSBKeyframeAnimationFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSBKeyframeAnimationFunctions.h; path = ../../Modules/NSBKeyframeAnimation/NSBKeyframeAnimation/Classes/NSBKeyframeAnimation/NSBKeyframeAnimationFunctions.h; sourceTree = "<group>"; };
 		91915E3B17F984A1002031B0 /* ITProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITProgressIndicator.h; path = ../../Modules/ITProgressIndicator/ITProgressIndicator/Classes/ITProgressIndicator.h; sourceTree = "<group>"; };
 		91915E3C17F984A1002031B0 /* ITProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITProgressIndicator.m; path = ../../Modules/ITProgressIndicator/ITProgressIndicator/Classes/ITProgressIndicator.m; sourceTree = "<group>"; };
-		91915E3D17F984A1002031B0 /* NSBezierPath+Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSBezierPath+Geometry.h"; path = "../../Modules/ITProgressIndicator/ITProgressIndicator/Classes/NSBezierPath+Geometry.h"; sourceTree = "<group>"; };
-		91915E3E17F984A1002031B0 /* NSBezierPath+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSBezierPath+Geometry.m"; path = "../../Modules/ITProgressIndicator/ITProgressIndicator/Classes/NSBezierPath+Geometry.m"; sourceTree = "<group>"; };
 		91EE6BFA17FAC2F9004A307A /* DuxScrollViewAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DuxScrollViewAnimation.h; path = Classes/DuxScrollViewAnimation.h; sourceTree = SOURCE_ROOT; };
 		91EE6BFB17FAC2F9004A307A /* DuxScrollViewAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DuxScrollViewAnimation.m; path = Classes/DuxScrollViewAnimation.m; sourceTree = SOURCE_ROOT; };
 		91F1EF0917F2D4FD00B5017E /* ITPullToRefreshScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITPullToRefreshScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,8 +122,6 @@
 			children = (
 				91915E3B17F984A1002031B0 /* ITProgressIndicator.h */,
 				91915E3C17F984A1002031B0 /* ITProgressIndicator.m */,
-				91915E3D17F984A1002031B0 /* NSBezierPath+Geometry.h */,
-				91915E3E17F984A1002031B0 /* NSBezierPath+Geometry.m */,
 			);
 			name = ITProgressIndicator;
 			sourceTree = "<group>";
@@ -274,7 +269,7 @@
 		91F1EF0117F2D4FD00B5017E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Ilija Tovilo";
 				TargetAttributes = {
 					91F1EF2917F2D4FD00B5017E = {
@@ -331,7 +326,6 @@
 				91915E3917F98453002031B0 /* NSBKeyframeAnimation.m in Sources */,
 				91915E3A17F98453002031B0 /* NSBKeyframeAnimationFunctions.c in Sources */,
 				91F1EF6217F2FD0C00B5017E /* ITPullToRefreshEdgeView.m in Sources */,
-				91915E4017F984A1002031B0 /* NSBezierPath+Geometry.m in Sources */,
 				91F1EF2017F2D4FD00B5017E /* AppDelegate.m in Sources */,
 				91F1EF1917F2D4FD00B5017E /* main.m in Sources */,
 				91915E3F17F984A1002031B0 /* ITProgressIndicator.m in Sources */,
@@ -407,13 +401,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -444,14 +444,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -471,6 +476,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ITPullToRefreshScrollView/ITPullToRefreshScrollView-Prefix.pch";
 				INFOPLIST_FILE = "ITPullToRefreshScrollView/ITPullToRefreshScrollView-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.ilijatovilo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -484,6 +490,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ITPullToRefreshScrollView/ITPullToRefreshScrollView-Prefix.pch";
 				INFOPLIST_FILE = "ITPullToRefreshScrollView/ITPullToRefreshScrollView-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.ilijatovilo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -505,6 +512,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "ITPullToRefreshScrollViewTests/ITPullToRefreshScrollViewTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.ilijatovilo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -523,6 +531,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ITPullToRefreshScrollView/ITPullToRefreshScrollView-Prefix.pch";
 				INFOPLIST_FILE = "ITPullToRefreshScrollViewTests/ITPullToRefreshScrollViewTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "ch.ilijatovilo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

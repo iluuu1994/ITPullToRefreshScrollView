@@ -60,8 +60,9 @@
     
     if (edge & ITPullToRefreshEdgeTop) {
         range = NSMakeRange(0, 2);
+    } else {
+        range = NSMakeRange(data.count - 50, 50);
     }
-    else if (edge & ITPullToRefreshEdgeBottom) range = NSMakeRange(data.count - 50, 50);
         
     [self.tableView beginUpdates];
     {
